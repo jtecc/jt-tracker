@@ -9,43 +9,46 @@ const ORANGE = "#FF9500";
 const BLUE = "#4A9EFF";
 
 const PLAN = [
-  { type:"rest",      label:"DESCANSO",        icon:"🛌", exercises:[] },
-  { type:"gym",       label:"PECHO + TRÍCEPS", icon:"🏋️", exercises:[
-    {id:"a1",name:"Press Banca Plano",        s:4,r:"8" },
-    {id:"a2",name:"Press Inclinado Mancuerna",s:3,r:"10"},
-    {id:"a3",name:"Aperturas Cable",          s:3,r:"12"},
-    {id:"a4",name:"Tríceps Polea Alta",       s:3,r:"12"},
-    {id:"a5",name:"Press Agarre Cerrado",     s:3,r:"10"},
+  { type:"rest",       label:"DESCANSO",             icon:"🛌", exercises:[] },
+  { type:"gym",        label:"PIERNA",               icon:"🦵", exercises:[
+    {id:"l1",name:"Sentadilla en Smith",                         s:4, r:"12/10/8/6",  note:"Piramidal · Muslo paralelo al piso · Descanso 90s"},
+    {id:"l2",name:"Prensa 45° + Extensión Cuáds (BISERIE)",      s:4, r:"12+15",      note:"Sin descanso entre ejercicios · Descanso 75s entre rondas"},
+    {id:"l3",name:"Curl Femoral + Desplantes Caminando (BISERIE)",s:3, r:"12+12",     note:"Sin descanso entre ejercicios · Descanso 75s entre rondas"},
+    {id:"l4",name:"Goblet + Pantorrillas + Plancha (TRISERIE)",  s:3, r:"15+20+45s", note:"Sin descanso entre ejercicios · Descanso 90s entre rondas"},
   ]},
-  { type:"gym",       label:"ESPALDA + BÍCEPS",icon:"💪", exercises:[
-    {id:"b1",name:"Peso Muerto",              s:4,r:"6" },
-    {id:"b2",name:"Remo con Barra",           s:4,r:"8" },
-    {id:"b3",name:"Jalón al Pecho",           s:3,r:"10"},
-    {id:"b4",name:"Curl con Barra",           s:3,r:"10"},
-    {id:"b5",name:"Curl Inclinado",           s:3,r:"12"},
+  { type:"gym",        label:"PECHO + HOMBRO + TRÍCEPS", icon:"🏋️", exercises:[
+    {id:"p1",name:"Press Plano (Máquina Matrix o Barra)",        s:4, r:"12/10/8/6", note:"Piramidal · +2-3 kg vs semana pasada · Descanso 90s"},
+    {id:"p2",name:"Press Inclinado + Pec Fly (BISERIE)",         s:3, r:"10+15",     note:"Squeeze 2s en pec fly · Descanso 75s entre rondas"},
+    {id:"p3",name:"Press Militar + Laterales + Pájaros (TRISERIE)", s:3, r:"10+15+15", note:"3 cabezas deltoides · Descanso 90s entre rondas"},
+    {id:"p4",name:"Fondos Máquina + Extensión Polea (BISERIE)",  s:3, r:"12+15",     note:"Sin descanso entre ejercicios · Descanso 60s entre rondas"},
   ]},
-  { type:"gym",       label:"PIERNAS",          icon:"🦵", exercises:[
-    {id:"c1",name:"Sentadilla Libre",         s:5,r:"8" },
-    {id:"c2",name:"Prensa 45°",              s:4,r:"10"},
-    {id:"c3",name:"RDL con Barra",            s:3,r:"10"},
-    {id:"c4",name:"Curl Femoral",             s:3,r:"12"},
-    {id:"c5",name:"Elevación de Talones",     s:4,r:"20"},
+  { type:"gym",        label:"ESPALDA + BÍCEPS",      icon:"💪", exercises:[
+    {id:"e1",name:"Jalón al Pecho Polea Alta",                   s:4, r:"12/10/8/6", note:"Piramidal · Agarre ancho · Aprieta omóplatos · Descanso 90s"},
+    {id:"e2",name:"Remo en Máquina",                             s:4, r:"10",        note:"Pecho contra pad · Jala al ombligo · Squeeze 1s · Descanso 75s"},
+    {id:"e3",name:"Remo Mancuerna a Una Mano",                   s:3, r:"12c/lado",  note:"Rodilla y mano en banco · Jala hacia cadera · Descanso 60s"},
+    {id:"e4",name:"Jalón Agarre Cerrado (Triángulo)",            s:3, r:"12",        note:"Grosor espalda media · Descanso 60s"},
+    {id:"e5",name:"Hiperextensiones 45°",                        s:3, r:"15",        note:"Aprieta glúteos y espalda arriba · Sin peso extra"},
+    {id:"e6",name:"Curl Barra Z de Pie",                         s:3, r:"10",        note:"Sin balancear torso · Descanso 60s"},
+    {id:"e7",name:"Curl Mancuernas Alterno Sentado",             s:3, r:"12c/brazo", note:"Banco 90° para no hacer trampa · Descanso 45s"},
   ]},
-  { type:"gym",       label:"HOMBROS + CORE",  icon:"🎯", exercises:[
-    {id:"d1",name:"Press Militar",            s:4,r:"8" },
-    {id:"d2",name:"Elevaciones Laterales",    s:4,r:"15"},
-    {id:"d3",name:"Face Pull Cable",          s:3,r:"15"},
-    {id:"d4",name:"Plancha",                  s:3,r:"60s"},
-    {id:"d5",name:"Colgado Elevación Piernas",s:3,r:"12"},
+  { type:"gym",        label:"HOMBROS + CORE",        icon:"🎯", exercises:[
+    {id:"h1",name:"Press Militar Smith",                         s:4, r:"12/10/8/6", note:"Piramidal · Press pesado del día · Descanso 90s"},
+    {id:"h2",name:"Elevaciones Laterales",                       s:4, r:"15",        note:"Técnica estricta · Sin impulso · Descanso 45s"},
+    {id:"h3",name:"Elevaciones Frontales con Disco",             s:3, r:"12",        note:"Disco 10-15kg · Sube a altura de ojos · Descanso 60s"},
+    {id:"h4",name:"Pájaros Rear Delt",                           s:3, r:"15",        note:"Inclinado · Abre brazos · Peso ligero · Descanso 45s"},
+    {id:"h5",name:"Plancha Frontal",                             s:3, r:"45s",       note:"Si aguantas más, aguanta más · Descanso 45s"},
+    {id:"h6",name:"Crunches con Peso en Pecho",                  s:3, r:"20",        note:"Disco 10-15kg · Omóplatos se despegan del piso · Descanso 45s"},
+    {id:"h7",name:"Elevación de Piernas Colgado",                s:3, r:"15",        note:"En silla romana o barra · Descanso 45s"},
+    {id:"h8",name:"Plancha Lateral",                             s:2, r:"30s c/lado",note:"Oblicuos · Descanso 30s"},
   ]},
-  { type:"gym",       label:"FULL BODY",        icon:"⚡", exercises:[
-    {id:"e1",name:"Hang Clean",               s:4,r:"5" },
-    {id:"e2",name:"Dominadas",                s:4,r:"8" },
-    {id:"e3",name:"Remo con Mancuerna",       s:3,r:"10"},
-    {id:"e4",name:"Zancadas Caminando",       s:3,r:"12"},
-    {id:"e5",name:"Rueda Abdominal",          s:3,r:"10"},
+  { type:"gym",        label:"PIERNA (x2)",           icon:"🔥", exercises:[
+    {id:"l2a",name:"Sentadilla Libre",                           s:4, r:"12/10/8/6", note:"Piramidal · Baja hasta paralelo · Descanso 90s"},
+    {id:"l2b",name:"Prensa 45° + RDL (BISERIE)",                 s:4, r:"10+10",     note:"Prensa → directo a RDL · Descanso 75s entre rondas"},
+    {id:"l2c",name:"Curl Femoral Acostado",                      s:3, r:"12",        note:"Controlado en bajada · Explosivo en subida · Descanso 60s"},
+    {id:"l2d",name:"Zancadas Caminando",                         s:3, r:"12c/pierna",note:"Paso largo para glúteo · Descanso 60s"},
+    {id:"l2e",name:"Elevación Pantorrillas Prensa",              s:4, r:"20",        note:"Talón abajo máximo · 2s arriba · Descanso 45s"},
   ]},
-  { type:"kickboxing",label:"KICKBOXING",       icon:"🥊", exercises:[] },
+  { type:"active",     label:"DESCANSO ACTIVO",       icon:"🚶", exercises:[] },
 ];
 
 const SUPPS = [
@@ -67,8 +70,8 @@ const calcHours = (b,w) => { if(!b||!w) return null; const [bh,bm]=b.split(":").
 
 const buildLog = d => {
   const plan = PLAN[getDow(d)];
-  return { date:d, dayType:plan.type, status:plan.type==="rest"?"rest":"pending",
-    exercises:plan.exercises.map(ex=>({id:ex.id,name:ex.name,status:"pending",moveToNext:false,
+  return { date:d, dayType:plan.type, status:(plan.type==="rest"||plan.type==="active")?"rest":"pending",
+    exercises:plan.exercises.map(ex=>({id:ex.id,name:ex.name,status:"pending",moveToNext:false,note:ex.note||"",
       sets:Array.from({length:ex.s},(_,i)=>({n:i+1,weight:"",reps:ex.r,done:false}))})),
     cardio:{done:false,type:"",mins:""}, supplements:{}, sleep:{bedtime:"",wake:"",ahi:"",hrv:""} };
 };
@@ -86,6 +89,69 @@ const getPast7 = async () => {
   return days;
 };
 
+const generateInsight = (log, week, plan) => {
+  const gymDays = week.filter(d => d.dayType === "gym");
+  const trained = gymDays.filter(d => d.status === "trained").length;
+  const missed = gymDays.filter(d => d.status === "missed").length;
+  const suppVals = week.map(d => Object.values(d.supplements).filter(Boolean).length);
+  const suppAvg = Math.round(suppVals.reduce((a,b)=>a+b,0) / week.length);
+  const ahiVals = week.map(d=>d.sleep.ahi).filter(Boolean).map(Number);
+  const ahiAvg = ahiVals.length ? (ahiVals.reduce((a,b)=>a+b,0)/ahiVals.length) : null;
+  const hrsVals = week.map(d=>calcHours(d.sleep.bedtime,d.sleep.wake)).filter(Boolean).map(Number);
+  const hrsAvg = hrsVals.length ? (hrsVals.reduce((a,b)=>a+b,0)/hrsVals.length) : null;
+  const suppToday = Object.values(log.supplements).filter(Boolean).length;
+
+  const lines = [];
+
+  // Entrenos
+  if (gymDays.length === 0 || (trained === 0 && missed === 0)) {
+    lines.push("Semana sin datos suficientes de entreno — empieza a registrar hoy.");
+  } else if (trained === gymDays.length) {
+    lines.push(`Semana perfecta: ${trained}/${gymDays.length} entrenos completados.`);
+  } else if (missed >= 2) {
+    lines.push(`${missed} entrenos perdidos esta semana — el físico de Troy no se negocia. Recupera el ritmo hoy.`);
+  } else if (trained > 0) {
+    lines.push(`${trained}/${gymDays.length} entrenos completados. Consistencia aceptable, pero hay margen.`);
+  }
+
+  // Suplementos
+  if (suppToday === 0) {
+    lines.push("Suplementos de hoy: ninguno registrado. El minoxidil PM es lo más crítico si ya es noche.");
+  } else if (suppToday < 5) {
+    lines.push(`Suplementos hoy: ${suppToday}/9. Verifica si falta el magnesio glicinato antes de dormir.`);
+  } else if (suppToday === SUPPS.length) {
+    lines.push("Stack de suplementos completo hoy. Así se mantiene la consistencia.");
+  }
+
+  // Sueño / AHI
+  if (ahiAvg !== null) {
+    if (ahiAvg < 2) {
+      lines.push(`AHI promedio ${ahiAvg.toFixed(1)} — por debajo del target de 2.0. El APAP está funcionando.`);
+    } else if (ahiAvg <= 5) {
+      lines.push(`AHI promedio ${ahiAvg.toFixed(1)} — aceptable pero sobre tu baseline de 4.10. Revisa posición al dormir.`);
+    } else {
+      lines.push(`AHI promedio ${ahiAvg.toFixed(1)} — por encima de 5. Contacta a tu médico si persiste.`);
+    }
+  }
+
+  if (hrsAvg !== null) {
+    if (hrsAvg < 6.5) {
+      lines.push(`Promedio de sueño ${hrsAvg}h — insuficiente para recuperación muscular. El músculo crece mientras duermes.`);
+    } else if (hrsAvg >= 7.5) {
+      lines.push(`Sueño promedio ${hrsAvg}h — excelente. La recuperación está optimizada.`);
+    }
+  }
+
+  // Acción de hoy
+  if (log.dayType === "gym" && log.status === "pending") {
+    lines.push(`Hoy toca ${plan.label}. Pendiente de registrar.`);
+  } else if (log.dayType === "active") {
+    lines.push("Hoy es descanso activo. Sal a caminar 40-45 min — quema grasa sin generar fatiga.");
+  }
+
+  return lines.slice(0, 4).join(" ");
+};
+
 const Chk = ({checked,onClick,size=24})=>(
   <div onClick={e=>{e.stopPropagation();onClick();}} style={{width:size,height:size,flexShrink:0,borderRadius:"50%",background:checked?LIME:"transparent",border:`2px solid ${checked?LIME:BORDER}`,display:"flex",alignItems:"center",justifyContent:"center",color:"#000",fontWeight:700,fontSize:size*0.38,cursor:"pointer",transition:"all 0.15s"}}>
     {checked?"✓":""}
@@ -101,10 +167,10 @@ const Ring = ({pct,color=LIME,size=70,stroke=6,label,sublabel}) => {
           <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="#1e1e1e" strokeWidth={stroke}/>
           <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={pct>0?color:"transparent"} strokeWidth={stroke} strokeDasharray={`${dash} ${circ}`} strokeLinecap="round"/>
         </svg>
-        <div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"JetBrains Mono, monospace",fontSize:size*0.19,fontWeight:700,color}}>{Math.round(pct)}%</div>
+        <div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"JetBrains Mono,monospace",fontSize:size*0.19,fontWeight:700,color}}>{Math.round(pct)}%</div>
       </div>
       {label&&<div style={{fontSize:"0.55rem",color:DIM,letterSpacing:"0.1em"}}>{label}</div>}
-      {sublabel&&<div style={{fontSize:"0.62rem",color,fontFamily:"JetBrains Mono, monospace"}}>{sublabel}</div>}
+      {sublabel&&<div style={{fontSize:"0.62rem",color,fontFamily:"JetBrains Mono,monospace"}}>{sublabel}</div>}
     </div>
   );
 };
@@ -127,7 +193,6 @@ export default function App() {
   const [ready, setReady] = useState(false);
   const [expandedEx, setExpandedEx] = useState(null);
   const [aiInsight, setAiInsight] = useState("");
-  const [loadingAI, setLoadingAI] = useState(false);
   const date=todayStr(); const dow=getDow(date); const plan=PLAN[dow];
 
   useEffect(()=>{
@@ -144,36 +209,18 @@ export default function App() {
 
   useEffect(()=>{ if(log&&ready){ ss(`jt:${date}`,log); setWeek(prev=>prev.map(d=>d.date===date?log:d)); } },[log,ready]);
 
+  useEffect(()=>{
+    if(ready&&log&&week.length){
+      setAiInsight(generateInsight(log, week, plan));
+    }
+  },[ready, log, week]);
+
   const upd = fn => setLog(prev=>({...fn({...prev})}));
-
-  const fetchAI = useCallback(async (currentLog, currentWeek) => {
-    if(!currentLog||!currentWeek.length) return;
-    setLoadingAI(true); setAiInsight("");
-    const gymDays=currentWeek.filter(d=>d.dayType==="gym");
-    const trained=gymDays.filter(d=>d.status==="trained").length;
-    const missed=gymDays.filter(d=>d.status==="missed").length;
-    const suppAvg=Math.round(currentWeek.reduce((acc,d)=>acc+(Object.values(d.supplements).filter(Boolean).length/SUPPS.length*100),0)/currentWeek.length);
-    const ahiVals=currentWeek.map(d=>d.sleep.ahi).filter(Boolean).map(Number);
-    const ahiAvg=ahiVals.length?(ahiVals.reduce((a,b)=>a+b,0)/ahiVals.length).toFixed(1):"sin datos";
-    const hrsVals=currentWeek.map(d=>calcHours(d.sleep.bedtime,d.sleep.wake)).filter(Boolean).map(Number);
-    const hrsAvg=hrsVals.length?(hrsVals.reduce((a,b)=>a+b,0)/hrsVals.length).toFixed(1):"sin datos";
-    const hoySupp=Object.values(currentLog.supplements).filter(Boolean).length;
-    const prompt=`Eres el coach personal de Jesús Tec, 35 años, CFO en Mérida México, entrenando objetivo físico Brad Pitt Troy (atlético, no voluminoso). Usa APAP, AHI baseline 4.10 target <2. Perfil stoico, alta exigencia. NO condescendas. Directo y brutal.\n\nDatos 7 días:\n- Gym: ${trained}/${gymDays.length} completados, ${missed} perdidos\n- Suplementos: ${suppAvg}% adherencia semanal, hoy ${hoySupp}/${SUPPS.length}\n- Sueño promedio: ${hrsAvg}h\n- AHI promedio: ${ahiAvg}\n- Hoy: ${plan.label}, estado: ${currentLog.status}\n\nMáximo 4 oraciones. 1 observación positiva real si la hay, 1 área crítica, 1 acción concreta para HOY. Sin emojis, sin bullets, habla de "tú" directo. Español.`;
-    try{
-      const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
-      const data=await res.json();
-      setAiInsight(data.content?.[0]?.text||"Sin datos suficientes.");
-    }catch{ setAiInsight("Error al conectar."); }
-    setLoadingAI(false);
-  },[plan]);
-
-  useEffect(()=>{ if(ready&&log&&week.length) fetchAI(log,week); },[ready]);
 
   if(!ready||!log) return(
     <div style={{display:"flex",alignItems:"center",justifyContent:"center",height:"100vh",background:"#080808",color:LIME,fontSize:"1.1rem",letterSpacing:"0.35em",fontFamily:"Barlow Condensed,sans-serif"}}>CARGANDO...</div>
   );
 
-  // Derived stats
   const gymDays=week.filter(d=>d.dayType==="gym");
   const trained=gymDays.filter(d=>d.status==="trained").length;
   const missed=gymDays.filter(d=>d.status==="missed").length;
@@ -190,21 +237,16 @@ export default function App() {
   const ahiColor=!log.sleep.ahi?DIM:ahiNum<2?LIME:ahiNum<=5?ORANGE:RED;
   const sm={pending:{color:ORANGE,label:"PENDIENTE"},trained:{color:LIME,label:"ENTRENADO ✓"},missed:{color:RED,label:"NO FUI ✗"},rest:{color:DIM,label:"DESCANSO"}}[log.status]||{color:ORANGE,label:"PENDIENTE"};
 
-  // ─── DASHBOARD ───────────────────────────────────────────────────────────
   const dashView=(
     <div style={{padding:"1rem",display:"flex",flexDirection:"column",gap:"0.75rem"}}>
-
-      {/* 3 rings */}
       <div style={{background:CARD,border:`1px solid ${BORDER}`,borderRadius:"0.8rem",padding:"1.2rem"}}>
         <div style={{fontSize:"0.6rem",color:DIM,letterSpacing:"0.2em",marginBottom:"1rem"}}>SEMANA EN CURSO</div>
         <div style={{display:"flex",justifyContent:"space-around"}}>
-          <Ring pct={trainPct} color={LIME}   size={72} label="ENTRENOS" sublabel={`${trained}/${gymDays.length}`}/>
-          <Ring pct={suppPct}  color={BLUE}   size={72} label="SUPLS"    sublabel={`${suppPct}%`}/>
+          <Ring pct={trainPct} color={LIME} size={72} label="ENTRENOS" sublabel={`${trained}/${gymDays.length}`}/>
+          <Ring pct={suppPct}  color={BLUE} size={72} label="SUPLS"    sublabel={`${suppPct}%`}/>
           <Ring pct={hrsAvg?Math.min(100,parseFloat(hrsAvg)/8*100):0} color={ORANGE} size={72} label="SUEÑO" sublabel={hrsAvg?`${hrsAvg}h`:"—"}/>
         </div>
       </div>
-
-      {/* 7-day calendar dots */}
       <div style={{background:CARD,border:`1px solid ${BORDER}`,borderRadius:"0.8rem",padding:"1rem"}}>
         <div style={{fontSize:"0.6rem",color:DIM,letterSpacing:"0.2em",marginBottom:"0.75rem"}}>ÚLTIMOS 7 DÍAS</div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:"0.35rem"}}>
@@ -215,7 +257,7 @@ export default function App() {
             const suppD=Object.values(d.supplements).filter(Boolean).length;
             return(
               <div key={i} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"0.22rem"}}>
-                <div style={{fontSize:"0.52rem",color:isToday?LIME:DIM,fontWeight:isToday?700:400,letterSpacing:"0.04em"}}>{DAY_NAMES[getDow(d.date)]}</div>
+                <div style={{fontSize:"0.52rem",color:isToday?LIME:DIM,fontWeight:isToday?700:400}}>{DAY_NAMES[getDow(d.date)]}</div>
                 <div style={{width:"100%",aspectRatio:"1",borderRadius:"0.4rem",background:bg,border:`1px solid ${isToday?`${LIME}55`:BORDER}`,display:"flex",alignItems:"center",justifyContent:"center"}}>
                   <div style={{width:7,height:7,borderRadius:"50%",background:dot}}/>
                 </div>
@@ -224,14 +266,7 @@ export default function App() {
             );
           })}
         </div>
-        <div style={{display:"flex",gap:"0.85rem",marginTop:"0.65rem",flexWrap:"wrap"}}>
-          {[[LIME,"Entrenado"],[RED,"No fui"],[DIM,"Descanso"],[ORANGE,"Pendiente"]].map(([c,l])=>(
-            <div key={l} style={{display:"flex",alignItems:"center",gap:"0.28rem"}}><div style={{width:6,height:6,borderRadius:"50%",background:c}}/><div style={{fontSize:"0.52rem",color:DIM}}>{l}</div></div>
-          ))}
-        </div>
       </div>
-
-      {/* KPI sparklines */}
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"0.5rem"}}>
         {[
           {label:"AHI PROM 7D",val:ahiAvg||"—",sub:"baseline 4.10 · target <2",color:ahiAvg?(parseFloat(ahiAvg)<2?LIME:parseFloat(ahiAvg)<=5?ORANGE:RED):"#fff",spark:ahiVals},
@@ -245,43 +280,26 @@ export default function App() {
           </div>
         ))}
       </div>
-
-      {/* Alerta adherencia */}
       {missed>=2&&(
         <div style={{background:`${RED}0e`,border:`1px solid ${RED}33`,borderRadius:"0.7rem",padding:"0.85rem",display:"flex",gap:"0.6rem",alignItems:"flex-start"}}>
           <div style={{fontSize:"1rem",flexShrink:0,marginTop:"0.1rem"}}>⚠</div>
           <div>
             <div style={{fontSize:"0.85rem",fontWeight:700,color:RED,letterSpacing:"0.04em"}}>ALERTA — {missed} DÍAS PERDIDOS</div>
-            <div style={{fontSize:"0.75rem",color:"#ccc",marginTop:"0.2rem",lineHeight:1.5}}>El físico de Troy no se negocia con el gimnasio. Recupera el ritmo hoy.</div>
+            <div style={{fontSize:"0.75rem",color:"#ccc",marginTop:"0.2rem",lineHeight:1.5}}>El físico de Troy no se negocia. Recupera el ritmo hoy.</div>
           </div>
         </div>
       )}
-
-      {/* AI Insight */}
       <div style={{background:CARD,border:`1px solid ${LIME}25`,borderRadius:"0.8rem",padding:"1rem"}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"0.75rem"}}>
           <div>
-            <div style={{fontSize:"0.6rem",color:LIME,letterSpacing:"0.2em"}}>ANÁLISIS IA</div>
+            <div style={{fontSize:"0.6rem",color:LIME,letterSpacing:"0.2em"}}>ANÁLISIS</div>
             <div style={{fontSize:"0.58rem",color:DIM,marginTop:"0.1rem"}}>Basado en tus últimos 7 días</div>
           </div>
-          <button onClick={()=>fetchAI(log,week)} disabled={loadingAI}
-            style={{background:"transparent",border:`1px solid ${BORDER}`,borderRadius:"0.35rem",padding:"0.22rem 0.65rem",color:loadingAI?DIM:LIME,fontSize:"0.62rem",letterSpacing:"0.08em",cursor:"pointer",fontFamily:"Barlow Condensed,sans-serif",transition:"color 0.2s"}}>
-            {loadingAI?"ANALIZANDO...":"↻ ACTUALIZAR"}
-          </button>
         </div>
-        {loadingAI?(
-          <div style={{display:"flex",gap:"0.4rem",alignItems:"center"}}>
-            <div style={{width:6,height:6,borderRadius:"50%",background:LIME,animation:"pulse 1s infinite"}}/>
-            <div style={{color:DIM,fontSize:"0.8rem",fontStyle:"italic"}}>Procesando tu semana...</div>
-          </div>
-        ):aiInsight?(
-          <div style={{fontSize:"0.92rem",lineHeight:1.7,color:"#ddd",fontStyle:"normal"}}>{aiInsight}</div>
-        ):(
-          <div style={{color:DIM,fontSize:"0.78rem"}}>Registra algunos días para activar el análisis.</div>
-        )}
+        {aiInsight
+          ?(<div style={{fontSize:"0.92rem",lineHeight:1.7,color:"#ddd"}}>{aiInsight}</div>)
+          :(<div style={{color:DIM,fontSize:"0.78rem"}}>Registra algunos días para activar el análisis.</div>)}
       </div>
-
-      {/* Estado de hoy + acciones rápidas */}
       <div style={{background:CARD,border:`1px solid ${sm.color}33`,borderRadius:"0.8rem",padding:"1rem"}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"0.65rem"}}>
           <div>
@@ -294,30 +312,32 @@ export default function App() {
             <div style={{fontSize:"0.52rem",color:DIM,letterSpacing:"0.1em"}}>SUPLS HOY</div>
           </div>
         </div>
-        {log.status==="pending"&&log.dayType!=="rest"&&(
+        {log.status==="pending"&&log.dayType==="gym"&&(
           <div style={{display:"flex",gap:"0.5rem"}}>
             <button onClick={()=>upd(l=>({...l,status:"trained"}))} style={{flex:1,padding:"0.7rem",background:`${LIME}12`,border:`1px solid ${LIME}`,color:LIME,borderRadius:"0.45rem",fontFamily:"Barlow Condensed,sans-serif",fontWeight:700,fontSize:"0.85rem",letterSpacing:"0.1em",cursor:"pointer"}}>✓ ENTRENADO</button>
             <button onClick={()=>upd(l=>({...l,status:"missed"}))}  style={{flex:1,padding:"0.7rem",background:`${RED}12`,border:`1px solid ${RED}`,color:RED,borderRadius:"0.45rem",fontFamily:"Barlow Condensed,sans-serif",fontWeight:700,fontSize:"0.85rem",letterSpacing:"0.1em",cursor:"pointer"}}>✗ NO FUI</button>
           </div>
         )}
-        {log.status!=="pending"&&log.dayType!=="rest"&&(
+        {log.status!=="pending"&&log.dayType==="gym"&&(
           <button onClick={()=>upd(l=>({...l,status:"pending"}))} style={{width:"100%",padding:"0.45rem",background:"transparent",border:`1px solid ${BORDER}`,color:DIM,borderRadius:"0.4rem",fontFamily:"Barlow Condensed,sans-serif",fontSize:"0.7rem",letterSpacing:"0.1em",cursor:"pointer",marginTop:"0.4rem"}}>RESETEAR ESTADO</button>
         )}
       </div>
     </div>
   );
 
-  // ─── ENTRENO ─────────────────────────────────────────────────────────────
   const entrenoView=(
     <div style={{padding:"1rem",display:"flex",flexDirection:"column",gap:"0.7rem"}}>
-      {log.dayType!=="rest"&&(
+      {log.dayType==="gym"&&(
         <div style={{background:CARD,border:`1px solid ${log.cardio.done?`${LIME}44`:BORDER}`,borderRadius:"0.8rem",padding:"1rem"}}>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"0.75rem"}}>
-            <div style={{fontSize:"0.7rem",color:DIM,letterSpacing:"0.16em"}}>CARDIO</div>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"0.6rem"}}>
+            <div>
+              <div style={{fontSize:"0.7rem",color:DIM,letterSpacing:"0.16em"}}>CARDIO</div>
+              <div style={{fontSize:"0.62rem",color:DIM,marginTop:"0.1rem"}}>Caminadora inclinación 10 · velocidad 5.5</div>
+            </div>
             <Chk checked={log.cardio.done} onClick={()=>upd(l=>({...l,cardio:{...l.cardio,done:!l.cardio.done}}))}/>
           </div>
           <div style={{display:"flex",gap:"0.5rem"}}>
-            <input value={log.cardio.type} onChange={e=>upd(l=>({...l,cardio:{...l.cardio,type:e.target.value}}))} placeholder="Tipo (Correr, HIIT...)" style={{flex:2,background:"#161616",border:`1px solid ${BORDER}`,borderRadius:"0.35rem",padding:"0.5rem 0.75rem",color:"#fff",fontFamily:"JetBrains Mono,monospace",fontSize:"0.9rem",outline:"none"}}/>
+            <input value={log.cardio.type} onChange={e=>upd(l=>({...l,cardio:{...l.cardio,type:e.target.value}}))} placeholder="Tipo (Caminadora, HIIT...)" style={{flex:2,background:"#161616",border:`1px solid ${BORDER}`,borderRadius:"0.35rem",padding:"0.5rem 0.75rem",color:"#fff",fontFamily:"JetBrains Mono,monospace",fontSize:"0.9rem",outline:"none"}}/>
             <input value={log.cardio.mins} onChange={e=>upd(l=>({...l,cardio:{...l.cardio,mins:e.target.value}}))} placeholder="min" type="number" style={{width:"70px",background:"#161616",border:`1px solid ${BORDER}`,borderRadius:"0.35rem",padding:"0.5rem",color:LIME,fontFamily:"JetBrains Mono,monospace",fontSize:"0.9rem",textAlign:"center",outline:"none"}}/>
           </div>
         </div>
@@ -326,22 +346,27 @@ export default function App() {
         <div style={{background:CARD,border:`1px solid ${BORDER}`,borderRadius:"0.8rem",padding:"2.5rem 1rem",textAlign:"center"}}>
           <div style={{fontSize:"2.8rem"}}>{plan.icon}</div>
           <div style={{fontSize:"1.4rem",fontWeight:700,marginTop:"0.5rem"}}>{plan.label}</div>
-          <div style={{fontSize:"0.8rem",color:DIM,marginTop:"0.3rem"}}>Sin pesas hoy — dale al cardio.</div>
+          <div style={{fontSize:"0.8rem",color:DIM,marginTop:"0.3rem",lineHeight:1.7}}>
+            {plan.type==="rest"&&"Recuperación total. Duerme bien y deja que el músculo crezca."}
+            {plan.type==="active"&&"Sal a caminar 40-45 minutos a paso moderado.\nSin inclinación forzada, sin gym, al aire libre.\nQuema grasa sin generar fatiga nueva."}
+          </div>
         </div>
       )}
       {log.exercises.map((ex,ei)=>{
         const isOpen=expandedEx===ei; const sc=ex.status==="done"?LIME:ex.status==="skipped"?RED:"#fff";
         const setsDone=ex.sets.filter(s=>s.done).length;
+        const planEx=plan.exercises.find(p=>p.id===ex.id);
         return(
           <div key={ex.id} style={{background:CARD,border:`1px solid ${ex.status==="done"?`${LIME}44`:ex.status==="skipped"?`${RED}33`:BORDER}`,borderRadius:"0.8rem",overflow:"hidden",opacity:ex.status==="skipped"?0.55:1,transition:"opacity 0.2s"}}>
             <div onClick={()=>setExpandedEx(isOpen?null:ei)} style={{padding:"0.9rem 1rem",display:"flex",justifyContent:"space-between",alignItems:"center",cursor:"pointer"}}>
-              <div>
-                <div style={{fontSize:"1.1rem",fontWeight:700,color:sc}}>{ex.name}</div>
-                <div style={{fontSize:"0.6rem",color:DIM,marginTop:"0.15rem",fontFamily:"JetBrains Mono,monospace"}}>{ex.sets.length} SERIES · <span style={{color:setsDone===ex.sets.length&&setsDone>0?LIME:DIM}}>{setsDone}/{ex.sets.length}</span></div>
+              <div style={{flex:1,paddingRight:"0.5rem"}}>
+                <div style={{fontSize:"1rem",fontWeight:700,color:sc,lineHeight:1.25}}>{ex.name}</div>
+                {planEx?.note&&<div style={{fontSize:"0.58rem",color:DIM,marginTop:"0.25rem",lineHeight:1.4}}>{planEx.note}</div>}
+                <div style={{fontSize:"0.6rem",color:DIM,marginTop:"0.2rem",fontFamily:"JetBrains Mono,monospace"}}>{ex.sets.length} SERIES · <span style={{color:setsDone===ex.sets.length&&setsDone>0?LIME:DIM}}>{setsDone}/{ex.sets.length}</span></div>
               </div>
-              <div style={{display:"flex",alignItems:"center",gap:"0.5rem"}}>
+              <div style={{display:"flex",alignItems:"center",gap:"0.5rem",flexShrink:0}}>
                 {ex.status==="done"&&<span style={{color:LIME,fontSize:"1.1rem"}}>✓</span>}
-                {ex.status==="skipped"&&<span style={{color:RED,fontSize:"0.65rem",letterSpacing:"0.08em"}}>SKIP</span>}
+                {ex.status==="skipped"&&<span style={{color:RED,fontSize:"0.65rem"}}>SKIP</span>}
                 <span style={{color:DIM,fontSize:"0.7rem"}}>{isOpen?"▲":"▼"}</span>
               </div>
             </div>
@@ -376,7 +401,6 @@ export default function App() {
     </div>
   );
 
-  // ─── SUPLEMENTOS ─────────────────────────────────────────────────────────
   const supleView=(()=>{
     const sects=[{key:"morning",label:"☀️  MAÑANA",items:SUPPS.filter(s=>s.time==="morning")},{key:"prework",label:"⚡  PRE-ENTRENO",items:SUPPS.filter(s=>s.time==="prework")},{key:"night",label:"🌙  NOCHE",items:SUPPS.filter(s=>s.time==="night")}];
     const toggle=id=>upd(l=>({...l,supplements:{...l.supplements,[id]:!l.supplements[id]}}));
@@ -421,7 +445,6 @@ export default function App() {
     );
   })();
 
-  // ─── SUEÑO ───────────────────────────────────────────────────────────────
   const suenoView=(()=>{
     const su=(f,v)=>upd(l=>({...l,sleep:{...l.sleep,[f]:v}}));
     const ahi=parseFloat(log.sleep.ahi); const ahiC=!log.sleep.ahi?DIM:ahi<2?LIME:ahi<=5?ORANGE:RED;
@@ -466,7 +489,6 @@ export default function App() {
     );
   })();
 
-  // ─── NAV ─────────────────────────────────────────────────────────────────
   const TABS=[{id:"dash",label:"DASH",icon:"◈"},{id:"entreno",label:"GYM",icon:"◉"},{id:"suple",label:"SUPLS",icon:"◎"},{id:"sueno",label:"SUEÑO",icon:"◐"}];
 
   return(
@@ -475,19 +497,17 @@ export default function App() {
         <div style={{fontSize:"0.52rem",color:"#252525",letterSpacing:"0.35em"}}>JT · PERFORMANCE TRACKER</div>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginTop:"0.12rem"}}>
           <div style={{fontSize:"1.95rem",fontWeight:900,letterSpacing:"0.04em",lineHeight:1.1}}>
-            {DAY_NAMES[dow]} <span style={{color:sm.color,fontSize:"0.95rem",fontWeight:600,letterSpacing:"0.02em"}}>· {sm.label}</span>
+            {DAY_NAMES[dow]} <span style={{color:sm.color,fontSize:"0.95rem",fontWeight:600}}>· {sm.label}</span>
           </div>
           <div style={{fontSize:"0.62rem",color:DIM,fontFamily:"JetBrains Mono,monospace"}}>{date}</div>
         </div>
       </div>
-
       <div style={{flex:1,overflowY:"auto",paddingBottom:"5.5rem"}}>
         {tab==="dash"    && dashView}
         {tab==="entreno" && entrenoView}
         {tab==="suple"   && supleView}
         {tab==="sueno"   && suenoView}
       </div>
-
       <div style={{position:"fixed",bottom:0,left:"50%",transform:"translateX(-50%)",width:"100%",maxWidth:"440px",background:"#0b0b0b",borderTop:`1px solid ${BORDER}`,display:"grid",gridTemplateColumns:"repeat(4,1fr)",padding:"0.55rem 0 0.85rem"}}>
         {TABS.map(t=>(
           <button key={t.id} onClick={()=>setTab(t.id)} style={{background:"none",border:"none",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:"0.2rem",padding:"0.25rem"}}>
